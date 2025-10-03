@@ -23,42 +23,43 @@ export default function Form() {
     }
 
     return (
-        <form onSubmit={submit}>
-            <label for="author-post">Nome autore:</label>
-            <input
-                id="author-post"
-                name="author"
-                type="text"
-                placeholder="Autore"
-                value={post.author} onChange={change}
-            />
+        <div className='form-card'>
+            <h1>NUOVO POST</h1>
+            <form onSubmit={submit} className='form'>
+                <label for="author-post">Autore:</label>
+                <input
+                    id="author-post"
+                    name="author"
+                    type="text"
+                    value={post.author} onChange={change}
+                />
 
-            <label for="title-post">Titolo Post:</label>
-            <input
-                id="title-post"
-                name='title'
-                type="text"
-                placeholder="Titolo"
-                value={post.title} onChange={change}
-            />
+                <label for="title-post">Titolo:</label>
+                <input
+                    id="title-post"
+                    name='title'
+                    type="text"
+                    value={post.title} onChange={change}
+                />
 
-            <label for="body-post">Contenuto del Post:</label>
-            <textarea
-                id="body-post"
-                name='body'
-                placeholder="Testo del post"
-                rows="5"
-                value={post.body} onChange={change}
-            ></textarea>
-
-            <label for="checkbox-post">Post pubblico:</label>
-            <input
-                id="checkbox-post"
-                name='public'
-                type="checkbox"
-                checked={post.public} onChange={change}
-            />
-            <button type="submit" >Invia</button>
-        </form>
+                <label for="body-post">Contenuto:</label>
+                <textarea
+                    id="body-post"
+                    name='body'
+                    rows="5"
+                    value={post.body} onChange={change}
+                ></textarea>
+                <div>
+                    <label for="checkbox-post">Post pubblico:</label>
+                    <input
+                        id="checkbox-post"
+                        name='public'
+                        type="checkbox"
+                        checked={post.public} onChange={change}
+                    />
+                    <button type="submit" >Pubblica</button>
+                </div>
+            </form>
+        </div>
     )
 }
